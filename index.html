@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple WebRTC Implementation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 id="title">A Simple Id-to-Id Implementation of WebRTC</h1>
+    <div class="videos">
+        <video id="localStream" autoplay playsinline></video>
+        <video id="remoteStream" autoplay playsinline style="display: none;"></video>
+    </div>
+    
+    <div class="callField">
+        <input id ="destinationId" type="text" placeholder="Enter destination id: ">
+        <button id="startButton">Start</button>
+        <button id="endButton" disabled="true">End</button>
+    </div>
+    <p>My Id: <b id="myId"></b></p>
+    <p>Connected to: <b id="connectedTo"></b></p>
+
+    <div id="modal">
+        <div class="modal-content">
+            <span>You have received a call. Do you want to answer?</span>
+            <div>
+                <button id="btnYes">Yes</button>
+                <button id="btnNo">No</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
